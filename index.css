@@ -1,0 +1,236 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.container {
+  max-width: 1350px;
+  height: auto;
+  margin: 0 20px;
+}
+.list {
+  width: 100%;
+  height: auto;
+  margin: 5px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.target {
+  font-size: 16px;
+  width: 135px;
+  border-radius: 8px;
+  height: 50px;
+  margin: 5px 5px;
+  background-color: inherit;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  transition: background-color linear 0.4s;
+}
+
+.target:hover {
+  background-color: rgba(189, 189, 189, 0.247);
+}
+.target[attribute] {
+  background-color: black;
+  color: white;
+  transition: background-color linear 0.4s;
+}
+
+.body__title {
+  display: flex;
+  justify-content: center;
+}
+
+.button__place {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 5px;
+}
+.button {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(0, 0, 0);
+  width: 50%;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+  height: 34px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  transition: background-color linear 0.2s;
+}
+button:hover {
+  background-color: rgba(189, 189, 189, 0.247);
+  color: rgb(0, 0, 0);
+  transition: background-color linear 0.4s;
+}
+
+/* Notification */
+
+.notification {
+  position: fixed;
+  background-color: rgba(255, 228, 196, 0);
+}
+
+.notification__block {
+  position: relative;
+  width: 350px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2200;
+  padding: 0 0 0 25px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  color: white;
+}
+
+.notification__block-error {
+  background-color: red;
+  position: relative;
+  width: 350px;
+  padding: 0 0 0 25px;
+  color: white;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1100;
+}
+
+.notification__block h3 {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.notification__block-error h3 {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+.notification__cross {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.notification__cross:after {
+  top: 9px;
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: rgb(224, 218, 218);
+  transform: rotate(45deg);
+}
+.notification__cross:before {
+  top: 9px;
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: rgb(224, 218, 218);
+  transform: rotate(-45deg);
+}
+
+/* circle stage */
+.wrapper {
+  margin: 20px 0 0 0;
+}
+
+.stage__container {
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color ease 0.4s;
+  border: none;
+  z-index: 100;
+}
+
+.circle[attr="enable"] {
+  background-color: rgb(16, 77, 189);
+  color: white;
+  transition: background-color ease 0.4s;
+}
+.circle[attr="disabled"] {
+  background-color: rgb(141, 141, 141);
+  color: rgb(169, 169, 169);
+  cursor: default;
+}
+
+.circle:hover {
+  color: black;
+  transition: all ease 0.4s;
+  box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.4);
+
+  background-color: rgba(192, 192, 192, 0.863);
+}
+
+.circle p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4);
+
+  z-index: -1;
+}
+
+.line__target {
+  height: 12px;
+  width: 100%;
+  border: 2px solid white;
+  box-shadow: 1px 2px 3px 2px rgb(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.line__target[attr="enable"] {
+  transition: all ease 0.3s;
+  background-color: rgb(16, 77, 189);
+  border-radius: 4px;
+  height: 12px;
+}
